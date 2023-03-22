@@ -1,0 +1,44 @@
+-- folosire scapy
+cd capitolul0
+docker compose up -d
+docker compose exec rt1 bash
+scapy 
+-- iti deschide terminal de py
+
+-- deschidem un nou terminal
+cd capitolul0
+docker compose up -d
+docker compose exec rt1 bash
+ping -c 1 github.com
+
+-- in primul terminal scriem
+pachete  = sniff()
+-- facem din nou ping in al doilea terminal, apoi revenim in primul terminal si scriem:
+^C>>> pachete[1].show()
+-- asta se va afisa
+###[ Ethernet ]### 
+  dst= 02:42:ac:12:00:04
+  src= 02:42:a3:90:59:2f
+  type= IPv4
+###[ IP ]### 
+     version= 4
+     ihl= 5
+     tos= 0x0
+     len= 84
+     id= 6380
+     flags= 
+     frag= 0
+     ttl= 127
+     proto= icmp
+     chksum= 0x7150
+     src= 140.82.121.4
+     dst= 172.18.0.4
+     \options\
+###[ ICMP ]### 
+        type= echo-reply
+        code= 0
+        chksum= 0xff69
+        id= 0x2
+        seq= 0x1
+###[ Raw ]### 
+           load= '\xcc\\\x10d\x00\x00\x00\x00Y\xff\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567'

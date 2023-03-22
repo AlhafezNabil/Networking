@@ -1,0 +1,22 @@
+sudo usermod -aG docker $USER
+newgrp docker
+docker ps
+sudo apt install docker-compose
+docker-compose up
+docker compose exec rt1 bash
+ifconfig (daca vrei)
+ping localhost
+ping 127.123.123.0
+ping 127.27.0.2
+docker compose exec rt1 bash
+
+
+
+
+
+
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+sudo apt install curl
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
