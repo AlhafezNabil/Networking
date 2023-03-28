@@ -1,4 +1,3 @@
-# The Summrize of the below steps 1 -> 9:
 ## Protocols and models.
  
 1.  Network Protocol Requirements:
@@ -90,3 +89,29 @@ Ethernet - This protocol is responsible for the delivery of messages from one NI
     Ethernet - Defines the rules for wiring and signaling standards of the network access layer.
     WLAN - Wireless Local Area Network. Defines the rules for wireless signaling across the 2.4 GHz and 5 GHz radio frequencies.
 
+6. As shown in the figure, there are two layered models that are used to describe network operations:
+
+  - Open System Interconnection (OSI) Reference Model
+  - TCP/IP Reference Model
+
+7. This leads to segmenting messages having two primary benefits:
+
+Increases speed - Because a large data stream is segmented into packets, large amounts of data can be sent over the network without tying up a communications link. This allows many different conversations to be interleaved on the network called multiplexing.
+Increases efficiency -If a single segment is fails to reach its destination due to a failure in the network or network congestion, only that segment needs to be retransmitted instead of resending the entire data stream.
+
+8. Sequencing: In network communications, each segment of the message must go through a similar process to ensure that it gets to the correct destination and can be reassembled into the content of the original message, as shown in the figure. TCP is responsible for sequencing the individual segments.
+
+9. Addresses:The network and data link layers are responsible for delivering the data from the source device to the destination device. As shown in the figure, protocols at both layers contain a source and destination address, but their addresses have different purposes:
+
+  - Network layer source and destination addresses - Responsible for delivering the IP packet from the original source to the final destination, which may be on the same network or a remote network.
+  
+  - Data link layer source and destination addresses - Responsible for delivering the data link frame from one network interface card (NIC) to another NIC on the same network.
+  - Layer 3 Logical Address: An IP address is the network layer, or Layer 3, logical address used to deliver the IP packet from the original source to the final destination, as shown in the figure.
+      * The IP packet contains two IP addresses: Source IP address - The IP address of the sending device, which is the original source of the packet.
+Destination IP address - The IP address of the receiving device, which is the final destination of the packet.
+
+  * An IP address contains two parts:
+Network portion (IPv4) or Prefix (IPv6) - The left-most part of the address that indicates the network in which the IP address is a member. All devices on the same network will have the same network portion of the address.
+Host portion (IPv4) or Interface ID (IPv6) - The remaining part of the address that identifies a specific device on the network. This portion is unique for each device or interface on the network.
+
+- Note: The subnet mask (IPv4) or prefix-length (IPv6) is used to identify the network portion of an IP address from the host portion.
